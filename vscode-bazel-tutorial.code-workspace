@@ -1,0 +1,142 @@
+{
+ "folders": [
+    {
+        "name": "Project Root",
+        "path": "."
+    },
+    {
+        "name": "Configuration",
+        "path": "conf"
+    },
+    {
+        "name": "Tools",
+        "path": "tools"
+    },
+    {
+        "name": "API",
+        "path": "api"
+    },
+    {
+        "name": "Go Projects",
+        "path": "golang"
+    },
+    {
+        "name": "Java Projects",
+        "path": "java"
+    }
+ ],
+ "settings": {
+    "editor.formatOnSave": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "gopls": {
+      "formatting.gofumpt": true,
+      "formatting.local": "github.com/bazelbuild/rules_go",
+      "ui.completion.usePlaceholders": true,
+      "ui.semanticTokens": true,
+      "ui.codelenses": {
+        "gc_details": false,
+        "regenerate_cgo": false,
+        "generate": false,
+        "test": false,
+        "tidy": false,
+        "upgrade_dependency": false,
+        "vendor": false
+      }
+    },
+    "go.goroot": "${workspaceFolder}/bazel-retail-data-platform/external/go_sdk",
+    "go.toolsEnvVars": {
+      "GOPACKAGESDRIVER": "${workspaceFolder}/tools/gopackagesdriver.sh"
+    },
+    "go.enableCodeLens": {
+      "references": false,
+      "runtest": false
+    },
+    "go.useLanguageServer": true,
+    "go.buildOnSave": "off",
+    "go.lintOnSave": "off",
+    "go.vetOnSave": "off",
+    "java.autobuild.enabled": false,
+    "java.completion.enabled": true,
+    "java.project.sourcePaths": [
+      "bazel-out/**/bin/java/**/_javac/*_proto/lib*_tmp/",
+      "java/model",
+      "java/service"
+    ],
+    "java.project.referencedLibraries": {
+      "include": [
+        "bazel-bin/java/**/lib*_deps.jar",
+        "bazel-bin/java/**/lib*_proto.jar",
+        "bazel-bin/java/**/lib*_proto.jdeps"
+      ],
+      "exclude": [
+        "bazel-bin/java/**/*hjar.jar",
+        "bazel-bin/java/**/*native-header.jar",
+        "bazel-bin/java/**/*.jar_manifest*",
+        "bazel-bin/java/**/*params"
+      ]
+    },
+    "[starlark]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.rulers": [100],
+      "editor.wordWrapColumn": 100,
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "trunk.io"
+    },
+    "[go]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.rulers": [100],
+      "editor.wordWrapColumn": 100,
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "trunk.io"
+    },
+    "[java]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.rulers": [100],
+      "editor.wordWrapColumn": 100,
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "trunk.io"
+    },
+    "[markdown]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.rulers": [100],
+      "editor.wordWrapColumn": 100,
+      "editor.wordWrap": "bounded",
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true,
+      "editor.defaultFormatter": "trunk.io"
+    },
+    "[sql]": {
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true,
+      "editor.formatOnSave": false,
+      "editor.formatOnPaste": false,
+      "editor.defaultFormatter": "trunk.io"
+    },
+    "licenser.license": "AL2",
+    "licenser.author": "Ryan McGuinness",
+    "licenser.projectName": "VSCode Bazel Tutorial",
+    "sqltools.formatLanguages": [],
+    "sql-formatter.uppercase": true,
+    "maven.terminal.customEnv": [
+
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "BazelBuild.vscode-bazel",
+      "ymotongpoo.licenser",
+      "vscjava.vscode-java-pack",
+      "golang.go",
+      "premparihar.gotestexplorer",
+      "zxh404.vscode-proto3",
+      "googlecloudtools.cloudcode",
+      "trunk.io"
+    ]
+  }
+
+}

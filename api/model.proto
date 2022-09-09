@@ -1,0 +1,119 @@
+/* Copyright 2022 Ryan McGuinness
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ syntax = "proto3";
+
+ package example.model;
+
+ // Go Lang Options
+ option go_package = "example/model";
+
+ // Java Options
+ option java_package = "example.model";
+ option java_multiple_files = true;
+
+ import "google/protobuf/timestamp.proto";
+
+ /*
+  * Represents a physical or logical store location
+  */
+ message Store {
+    string id = 1;
+    string name = 2;
+    string zipcode = 3;
+    map<string, string> meta = 4;
+ }
+
+ /*
+  * Reperesents an entity in a buy relationship with a store
+  */
+ message Customer {
+    string id = 1;
+    string name = 2;
+    string zipcode = 3;
+ }
+
+ /*
+  * Represents an Item (Product or Service) that may be sold on a given day
+  */
+ message Item {
+    string sku = 1;
+    string name = 2;
+    google.protobuf.Timestamp effective_date = 3;
+    float price = 4;
+    bool deleted = 5;
+ }
+
+ /*
+  * Represents a line item associated to its quantity, total, tax total, discounts, and line_total.enum
+  */
+ message LineItem {
+   int32 ordinal = 1;
+   int32 quantity = 2;
+   float item_total = 3;
+   float item_tax = 4;
+   float item_discounts = 5;
+   float line_total = 6;
+   Item item = 7;
+   map<string, string> discount_details = 8;
+ }
+
+ /*
+  * Reperesents a transaction or the purchased of Items by a Given customer at a store location.
+  */
+ message Transaction {
+    string id = 1;
+    google.protobuf.Timestamp start_time = 2;
+    google.protobuf.Timestamp end_time = 3;
+    Store store = 4;
+    Customer customer = 5;
+    repeated LineItem line_items = 6;
+ }
+
+
+ /*
+  * Request Response objects
+  */
+
+  message SimpleResponse {
+   google.protobuf.Timestamp ts = 1;
+   int32 response_code = 2;
+   string error_message = 3;
+ }
+
+ enum SearchType {
+   CONTAINS = 0;
+   BEGINS_WITH = 1;
+   ENDS_WITH = 2;
+}
+
+message CustomerSearch {
+   SearchType type = 1;
+   oneof search {
+       string id = 2;
+       string name = 3;
+   }
+}
+
+message ItemSearch {
+   SearchType type = 1;
+   oneof search {
+       string sku = 2;
+       string name = 3;
+   }
+}
+
+message IdRequest {
+   string id = 1;
+}
