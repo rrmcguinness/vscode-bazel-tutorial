@@ -44,9 +44,9 @@
         "vendor": false
       }
     },
-    "go.goroot": "${workspaceFolder}/bazel-retail-data-platform/external/go_sdk",
+    "go.goroot": "bazel-vscode_bazel_tutorial/external/go_sdk",
     "go.toolsEnvVars": {
-      "GOPACKAGESDRIVER": "${workspaceFolder}/tools/gopackagesdriver.sh"
+      "GOPACKAGESDRIVER": "tools/gopackagesdriver.sh"
     },
     "go.enableCodeLens": {
       "references": false,
@@ -56,10 +56,28 @@
     "go.buildOnSave": "off",
     "go.lintOnSave": "off",
     "go.vetOnSave": "off",
+    "java.configuration.runtimes": [
+      {
+        "name": "JavaSE-17",
+        "path": "bazel-vscode_bazel_tutorial/external/local_jdk",
+        "sources": "bazel-vscode_bazel_tutorial/external/local_jdk/lib/src.zip",
+        "default": true
+      }
+    ],
     "java.autobuild.enabled": false,
     "java.completion.enabled": true,
+    "java.project.resourceFilters": [
+      "api",
+      "bazel-*",
+      "conf",
+      "third_party",
+      "golang",
+      "docs",
+      "node_modules",
+      ".git"
+    ],
     "java.project.sourcePaths": [
-      "bazel-out/**/bin/java/**/_javac/*_proto/lib*_tmp/",
+      "bazel-out/*-fastbuild/bin/java/**/_javac/model_proto/lib*_proto_tmp",
       "java/model",
       "java/service"
     ],
