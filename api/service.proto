@@ -32,11 +32,7 @@ import "google/protobuf/timestamp.proto";
 
 import "api/model.proto";
 
-
-
-
-
-service Store {
+service Stores {
     rpc List(google.protobuf.Empty)
         returns (stream example.model.Store) {}
 
@@ -45,11 +41,11 @@ service Store {
 
     rpc Update(example.model.Store) returns (example.model.Store) {}
 
-    rpc Delete(IdRequest) returns (SimpleResponse) {}
+    rpc Delete(example.model.IdRequest) returns (example.model.SimpleResponse) {}
 }
 
-service Customer {
-    rpc Find(CustomerSearch)
+service Customers {
+    rpc Find(example.model.CustomerSearch)
         returns (stream example.model.Customer) {}
 
     rpc Create(example.model.Customer)
@@ -58,15 +54,15 @@ service Customer {
     rpc Update(example.model.Customer)
         returns (example.model.Customer) {}
 
-    rpc Delete(IdRequest)
-        returns (SimpleResponse) {}
+    rpc Delete(example.model.IdRequest)
+        returns (example.model.SimpleResponse) {}
 }
 
-service Item {
-    rpc Find(ItemSearch)
+service Items {
+    rpc Find(example.model.ItemSearch)
         returns (stream example.model.Item) {}
 
-    rpc Get(IdRequest)
+    rpc Get(example.model.IdRequest)
         returns (example.model.Item) {}
 
     rpc Create(example.model.Item)
@@ -75,48 +71,31 @@ service Item {
     rpc Update(example.model.Item)
         returns (example.model.Item) {}
 
-    rpc Delete(IdRequest)
-        returns (SimpleResponse) {}
+    rpc Delete(example.model.IdRequest)
+        returns (example.model.SimpleResponse) {}
 
-    rpc Restore(IdRequest)
-        returns (SimpleResponse) {}
+    rpc Restore(example.model.IdRequest)
+        returns (example.model.SimpleResponse) {}
 }
 
-message TransactionRequest {
-    string transactionId = 1;
-}
 
-message TransactionResponse {
-    string transactionId = 1;
-    example.model.Transaction state = 2;
-}
 
-message TransactionCustomerRequest {
-    string transactionId = 1;
-    example.model.Customer customer = 2;
-}
-
-message TransactionItemRequest {
-    string transactionId = 1;
-    example.model.LineItem line_item = 2;
-}
-
-service Transaction {
+service Transactions {
 
     rpc Create(example.model.Store)
-        returns(TransactionResponse) {}
+        returns(example.model.TransactionResponse) {}
 
-    rpc AddCustomer(TransactionCustomerRequest)
-        returns (TransactionResponse) {}
+    rpc AddCustomer(example.model.TransactionCustomerRequest)
+        returns (example.model.TransactionResponse) {}
 
-    rpc AddItem(TransactionItemRequest)
-        returns (TransactionResponse) {}
+    rpc AddItem(example.model.TransactionItemRequest)
+        returns (example.model.TransactionResponse) {}
 
-    rpc RemoveItem(TransactionItemRequest)
-        returns (TransactionResponse) {}
+    rpc RemoveItem(example.model.TransactionItemRequest)
+        returns (example.model.TransactionResponse) {}
 
-    rpc PrepareForTender(TransactionRequest)
-        returns (TransactionResponse) {};
+    rpc PrepareForTender(example.model.TransactionRequest)
+        returns (example.model.TransactionResponse) {};
 
         // Add many more functions here :D
 }

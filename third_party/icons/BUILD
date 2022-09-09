@@ -1,4 +1,4 @@
-# Copyright 2022 Google LLC
+# Copyright 2022 Ryan McGuinness
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,6 +16,5 @@
 filegroup(
     name = "google_material_icons",
     srcs = glob(["google_material_icons/**"]),
-    visibility = ["//visibility:public"]
+    visibility = ["//visibility:public"],
 )
-

@@ -21,29 +21,40 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import example.model.Customer;
-import example.model.CustomerSearch;
+import example.model.Item;
+import example.model.ItemSearch;
 import example.model.IdRequest;
 import example.model.SimpleResponse;
 
-public class CustomerService extends CustomersGrpc.CustomersImplBase {
+public class ItemService extends ItemsGrpc.ItemsImplBase {
+
   @Override
-  public void find(CustomerSearch customerSearch, StreamObserver<Customer> responseObserver) {
+  public void find(ItemSearch itemSearch, StreamObserver<Item> responseObserver) {
 
   }
 
   @Override
-  public void create(Customer request, StreamObserver<Customer> responseObserver) {
+  public void get(IdRequest request, StreamObserver<Item> responseObserver) {
 
   }
 
   @Override
-  public void update(Customer request, StreamObserver<Customer> responseObserver) {
+  public void create(Item item, StreamObserver<Item> responseObserver) {
+
+  }
+
+  @Override
+  public void update(Item item, StreamObserver<Item> responseObserver) {
 
   }
 
   @Override
   public void delete(IdRequest request, StreamObserver<SimpleResponse> responseObserver) {
+
+  }
+
+  @Override
+  public void restore(IdRequest request, StreamObserver<SimpleResponse> responseObserver) {
 
   }
 }

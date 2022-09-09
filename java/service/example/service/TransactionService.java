@@ -21,29 +21,36 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import example.model.Customer;
-import example.model.CustomerSearch;
-import example.model.IdRequest;
-import example.model.SimpleResponse;
+import example.model.Store;
+import example.model.TransactionCustomerRequest;
+import example.model.TransactionItemRequest;
+import example.model.TransactionRequest;
+import example.model.TransactionResponse;
 
-public class CustomerService extends CustomersGrpc.CustomersImplBase {
+public class TransactionService extends TransactionsGrpc.TransactionsImplBase {
+
   @Override
-  public void find(CustomerSearch customerSearch, StreamObserver<Customer> responseObserver) {
+  public void create(Store store, StreamObserver<TransactionResponse> responseObserver) {
 
   }
 
   @Override
-  public void create(Customer request, StreamObserver<Customer> responseObserver) {
+  public void addCustomer(TransactionCustomerRequest request, StreamObserver<TransactionResponse> responseObserver) {
 
   }
 
   @Override
-  public void update(Customer request, StreamObserver<Customer> responseObserver) {
+  public void addItem(TransactionItemRequest request, StreamObserver<TransactionResponse> responseObserver) {
 
   }
 
   @Override
-  public void delete(IdRequest request, StreamObserver<SimpleResponse> responseObserver) {
+  public void removeItem(TransactionItemRequest request, StreamObserver<TransactionResponse> responseObserver) {
+
+  }
+
+  @Override
+  public void prepareForTender(TransactionRequest request, StreamObserver<TransactionResponse> responseObserver) {
 
   }
 }

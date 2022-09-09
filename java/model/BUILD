@@ -1,4 +1,4 @@
-# Copyright 2022 Google LLC
+# Copyright 2022 Ryan McGuinness
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -27,21 +27,21 @@ java_library(
 # Build the model into a local library.
 java_proto_library(
     name = "model_proto",
-    visibility = ["//visibility:public"],
     protos = [
         "//api:model",
     ],
+    visibility = ["//visibility:public"],
 )
 
 java_library(
     name = "model",
-    visibility = ["//visibility:public"],
     srcs = glob([
         "example/model/*.java",
         "example/utils/*.java",
     ]),
+    visibility = ["//visibility:public"],
     deps = [
         ":model_deps",
         ":model_proto",
-    ]
+    ],
 )

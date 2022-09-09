@@ -22,10 +22,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import example.model.Store;
-import example.service.IdRequest;
-import example.service.SimpleResponse;
+import example.model.IdRequest;
+import example.model.SimpleResponse;
 
-public class StoreService extends StoreGrpc.StoreImplBase {
+public class StoreService extends StoresGrpc.StoresImplBase {
   @Override
   public void list(Empty request, StreamObserver<Store> responseObserver) {
     responseObserver.onNext(Store.newBuilder().setId("10").build());

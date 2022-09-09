@@ -1,7 +1,5 @@
 # Visual Studio Code + Bazel Tutorial
 
-
-
 ## Finding Generated Source Files
 
 ```shell
@@ -15,7 +13,8 @@ ls /${workspace}/bazel-out/darwin-fastbuild/bin/java/service/_javac/service_prot
 ```
 
 ## Classpath Entries
-```
+
+```shell
 
 "${workspaceFolder}/bazel-bin/java/**/lib*.jar"
 "${workspaceFolder}/bazel-bin/java/**/lib*_proto.jar"
