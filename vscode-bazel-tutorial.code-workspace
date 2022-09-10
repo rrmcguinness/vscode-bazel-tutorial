@@ -1,42 +1,39 @@
 {
  "folders": [
     {
-      "name": "Root",
+      "name": "Visual Studio Code - Bazel Workspace",
       "path": "."
-    },
-    {
-        "name": "Configuration",
-        "path": "conf"
-    },
-    {
-        "name": "API",
-        "path": "api"
-    },
-    {
-        "name": "Go Projects",
-        "path": "golang",
-    },
-    {
-      "name": "Tools",
-      "path": "tools"
     },
  ],
  "settings": {
     "editor.formatOnSave": true,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
+    "files.exclude": {
+      "**/.trunk": true,
+      "**/.markdownlint.yaml": true,
+      "**/.editorconfig": true,
+      "**/.shellcheckrc": true,
+      "**/svgo.config.js": true,
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true
+    },
     "java.project.sourcePaths": ["java/src", "java/test"],
     "java.configuration.runtimes": [
       {
         "name": "JavaSE-17",
-        "path": "${userHome}/projects/build/external/remotejdk17_macos",
-        "sources": "${userHome}/projects/build/external/remotejdk17_macos/lib/src.zip",
+        "path": "/opt/projects/build/external/remotejdk17_macos",
+        "sources": "/opt/projects/build/external/remotejdk17_macos/lib/src.zip",
         "default": true
       }
     ],
     "java.project.referencedLibraries": [
-      "${userHome}/projects/build/execroot/vscode_bazel_tutorial/bazel-out/*-fastbuild/bin/external/maven/**/*.jar",
-      "${userHome}/projects/build/execroot/vscode_bazel_tutorial/bazel-out/*-fastbuild/bin/java/**/*.jar"
+      "../build/execroot/vscode_bazel_tutorial/bazel-out/*-fastbuild/bin/external/maven/**/*.jar",
+      "../build/execroot/vscode_bazel_tutorial/bazel-out/*-fastbuild/bin/java/**/*.jar"
     ],
     "go.useLanguageServer": true,
     "gopls": {
@@ -54,9 +51,9 @@
         "vendor": false
       }
     },
-    "go.goroot": "${userHome}/projects/build/external/go_sdk",
+    "go.gopath": "/opt/projects/build/external/go_sdk",
     "go.toolsEnvVars": {
-      "GOPACKAGESDRIVER": "${workspaceFolder}/tools/gopackagesdriver.sh"
+      "GOPACKAGESDRIVER": "tools/gopackagesdriver.sh"
     },
     "go.enableCodeLens": {
       "references": false,
@@ -101,9 +98,9 @@
     },
     "licenser.license": "AL2",
     "licenser.author": "Ryan McGuinness",
-    "licenser.projectName": "VSCode Bazel Tutorial",
+    "licenser.projectName": "Visual Studio Code - Bazel Workspace",
     "java.dependency.packagePresentation": "hierarchical",
-    "java.dependency.syncWithFolderExplorer": false,
+    "java.dependency.syncWithFolderExplorer": true,
   },
   "extensions": {
     "recommendations": [
@@ -115,6 +112,45 @@
       "zxh404.vscode-proto3",
       "googlecloudtools.cloudcode",
       "trunk.io"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "os_type",
+        "detail": "Prints the operating system type to output for use with Bazel directories: darwin, linux, or windows",
+        "type": "shell",
+        "osx": {
+          "command": "echo 'macos'"
+        },
+        "linux": {
+          "command": "echo 'linux'"
+        },
+        "windows": {
+          "command": "echo 'windows'"
+        },
+        "group": "none",
+
+      },
+      {
+        "label": "Bazel Build",
+        "type": "shell",
+        "command": "bazel build //...",
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        }
+      },
+      {
+          "label": "Bazel Test",
+          "type": "shell",
+          "command": "bazel test //...",
+          "group": {
+              "kind": "test",
+              "isDefault": true
+          }
+      }
     ]
   }
 
