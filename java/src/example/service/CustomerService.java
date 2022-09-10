@@ -14,10 +14,7 @@
 
 package example.service;
 
-import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicLong;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,9 +24,12 @@ import example.model.IdRequest;
 import example.model.SimpleResponse;
 
 public class CustomerService extends CustomersGrpc.CustomersImplBase {
+  private final Logger LOG = LogManager.getLogger(CustomerService.class);
+
+
   @Override
   public void find(CustomerSearch customerSearch, StreamObserver<Customer> responseObserver) {
-
+    LOG.debug("Attempting find.");
   }
 
   @Override

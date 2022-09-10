@@ -1,16 +1,12 @@
 {
  "folders": [
     {
-        "name": "Project Root",
-        "path": "."
+      "name": "Root",
+      "path": "."
     },
     {
         "name": "Configuration",
         "path": "conf"
-    },
-    {
-        "name": "Tools",
-        "path": "tools"
     },
     {
         "name": "API",
@@ -18,17 +14,31 @@
     },
     {
         "name": "Go Projects",
-        "path": "golang"
+        "path": "golang",
     },
     {
-        "name": "Java Projects",
-        "path": "java"
-    }
+      "name": "Tools",
+      "path": "tools"
+    },
  ],
  "settings": {
     "editor.formatOnSave": true,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
+    "go.useLanguageServer": true,
+    "java.project.sourcePaths": ["java/src", "java/test"],
+    "java.configuration.runtimes": [
+      {
+        "name": "JavaSE-17",
+        "path": "/Users/rmcguinness/Projects/build/external/remotejdk17_macos",
+        "sources": "/Users/rmcguinness/Projects/build/external/remotejdk17_macos/lib/src.zip",
+        "default": true
+      }
+    ],
+    "java.project.referencedLibraries": [
+      "../build/execroot/vscode_bazel_tutorial/bazel-out/*-fastbuild/bin/external/maven/**/*.jar",
+      "../build/execroot/vscode_bazel_tutorial/bazel-out/*-fastbuild/bin/java/**/*.jar"
+    ],
     "gopls": {
       "formatting.gofumpt": true,
       "formatting.local": "github.com/bazelbuild/rules_go",
@@ -44,7 +54,7 @@
         "vendor": false
       }
     },
-    "go.goroot": "bazel-vscode_bazel_tutorial/external/go_sdk",
+    "go.goroot": "../build/external/go_sdk",
     "go.toolsEnvVars": {
       "GOPACKAGESDRIVER": "tools/gopackagesdriver.sh"
     },
@@ -52,56 +62,9 @@
       "references": false,
       "runtest": false
     },
-    "go.useLanguageServer": true,
     "go.buildOnSave": "off",
     "go.lintOnSave": "off",
     "go.vetOnSave": "off",
-    "java.configuration.runtimes": [
-      {
-        "name": "JavaSE-17",
-        "path": "bazel-vscode_bazel_tutorial/external/local_jdk",
-        "sources": "bazel-vscode_bazel_tutorial/external/local_jdk/lib/src.zip",
-        "default": true
-      }
-    ],
-    "java.autobuild.enabled": false,
-    "java.completion.enabled": true,
-    "java.project.resourceFilters": [
-      "api",
-      "bazel-*",
-      "conf",
-      "third_party",
-      "golang",
-      "docs",
-      "node_modules",
-      ".git"
-    ],
-    "java.project.sourcePaths": [
-      "bazel-out/*-fastbuild/bin/java/**/_javac/model_proto/lib*_proto_tmp",
-      "java/model",
-      "java/service"
-    ],
-    "java.project.referencedLibraries": {
-      "include": [
-        "bazel-bin/java/**/lib*_deps.jar",
-        "bazel-bin/java/**/lib*_proto.jar",
-        "bazel-bin/java/**/lib*_proto.jdeps"
-      ],
-      "exclude": [
-        "bazel-bin/java/**/*hjar.jar",
-        "bazel-bin/java/**/*native-header.jar",
-        "bazel-bin/java/**/*.jar_manifest*",
-        "bazel-bin/java/**/*params"
-      ]
-    },
-    "[starlark]": {
-      "editor.insertSpaces": true,
-      "editor.tabSize": 2,
-      "editor.rulers": [100],
-      "editor.wordWrapColumn": 100,
-      "editor.formatOnSave": true,
-      "editor.defaultFormatter": "trunk.io"
-    },
     "[go]": {
       "editor.insertSpaces": true,
       "editor.tabSize": 2,
@@ -111,6 +74,14 @@
       "editor.defaultFormatter": "trunk.io"
     },
     "[java]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.rulers": [100],
+      "editor.wordWrapColumn": 100,
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "trunk.io"
+    },
+    "[starlark]": {
       "editor.insertSpaces": true,
       "editor.tabSize": 2,
       "editor.rulers": [100],
@@ -128,21 +99,11 @@
       "editor.formatOnPaste": true,
       "editor.defaultFormatter": "trunk.io"
     },
-    "[sql]": {
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true,
-      "editor.formatOnSave": false,
-      "editor.formatOnPaste": false,
-      "editor.defaultFormatter": "trunk.io"
-    },
     "licenser.license": "AL2",
     "licenser.author": "Ryan McGuinness",
     "licenser.projectName": "VSCode Bazel Tutorial",
-    "sqltools.formatLanguages": [],
-    "sql-formatter.uppercase": true,
-    "maven.terminal.customEnv": [
-
-    ]
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.dependency.syncWithFolderExplorer": false,
   },
   "extensions": {
     "recommendations": [

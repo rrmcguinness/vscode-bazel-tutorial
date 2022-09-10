@@ -13,35 +13,51 @@
 # limitations under the License.
 
 load("@rules_java//java:defs.bzl", "java_library")
-load("@rules_proto_grpc//java:defs.bzl", "java_proto_library")
+load("@rules_proto_grpc//java:defs.bzl", "java_grpc_library")
+
+package(default_visibility = ["//:__subpackages__"])
 
 java_library(
-    name = "model_deps",
+    name = "service_deps",
     visibility = ["//visibility:public"],
     exports = [
+        "@maven//:io_grpc_grpc_api",
+        "@maven//:io_grpc_grpc_netty_shaded",
+        "@maven//:io_grpc_grpc_protobuf",
+        "@maven//:io_grpc_grpc_stub",
         "@maven//:org_apache_commons_commons_lang3",
         "@maven//:org_apache_logging_log4j_log4j_api",
+        "@maven//:org_apache_logging_log4j_log4j_core",
+        "@maven//:org_apache_tomcat_annotations_api",
     ],
 )
 
-# Build the model into a local library.
-java_proto_library(
+java_grpc_library(
     name = "model_proto",
     protos = [
         "//api:model",
     ],
-    visibility = ["//visibility:public"],
+)
+
+# Build the services, and depend on the model.
+java_grpc_library(
+    name = "service_proto",
+    protos = [
+        "//api:service",
+    ],
+    deps = [
+        ":model_proto",
+    ],
 )
 
 java_library(
-    name = "model",
+    name = "service",
     srcs = glob([
-        "example/model/*.java",
-        "example/utils/*.java",
+        "src/**/*.java",
     ]),
-    visibility = ["//visibility:public"],
     deps = [
-        ":model_deps",
         ":model_proto",
+        ":service_deps",
+        ":service_proto",
     ],
 )
