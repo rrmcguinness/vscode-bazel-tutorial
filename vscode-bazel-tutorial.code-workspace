@@ -25,20 +25,20 @@
     "editor.formatOnSave": true,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
-    "go.useLanguageServer": true,
     "java.project.sourcePaths": ["java/src", "java/test"],
     "java.configuration.runtimes": [
       {
         "name": "JavaSE-17",
-        "path": "/Users/rmcguinness/Projects/build/external/remotejdk17_macos",
-        "sources": "/Users/rmcguinness/Projects/build/external/remotejdk17_macos/lib/src.zip",
+        "path": "${userHome}/projects/build/external/remotejdk17_macos",
+        "sources": "${userHome}/projects/build/external/remotejdk17_macos/lib/src.zip",
         "default": true
       }
     ],
     "java.project.referencedLibraries": [
-      "../build/execroot/vscode_bazel_tutorial/bazel-out/*-fastbuild/bin/external/maven/**/*.jar",
-      "../build/execroot/vscode_bazel_tutorial/bazel-out/*-fastbuild/bin/java/**/*.jar"
+      "${userHome}/projects/build/execroot/vscode_bazel_tutorial/bazel-out/*-fastbuild/bin/external/maven/**/*.jar",
+      "${userHome}/projects/build/execroot/vscode_bazel_tutorial/bazel-out/*-fastbuild/bin/java/**/*.jar"
     ],
+    "go.useLanguageServer": true,
     "gopls": {
       "formatting.gofumpt": true,
       "formatting.local": "github.com/bazelbuild/rules_go",
@@ -54,9 +54,9 @@
         "vendor": false
       }
     },
-    "go.goroot": "../build/external/go_sdk",
+    "go.goroot": "${userHome}/projects/build/external/go_sdk",
     "go.toolsEnvVars": {
-      "GOPACKAGESDRIVER": "tools/gopackagesdriver.sh"
+      "GOPACKAGESDRIVER": "${workspaceFolder}/tools/gopackagesdriver.sh"
     },
     "go.enableCodeLens": {
       "references": false,
