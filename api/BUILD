@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-load("@rules_proto_grpc//doc:defs.bzl", "doc_markdown_compile")
 load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@rules_proto_grpc//doc:defs.bzl", "doc_markdown_compile")
 
 package(default_visibility = ["//:__subpackages__"])
 
@@ -29,9 +29,10 @@ proto_library(
     srcs = [
         "model.proto",
     ],
+    visibility = ["//visibility:public"],
     deps = [
         "@com_google_protobuf//:timestamp_proto",
-    ]
+    ],
 )
 
 proto_library(
@@ -39,9 +40,10 @@ proto_library(
     srcs = [
         "service.proto",
     ],
+    visibility = ["//visibility:public"],
     deps = [
         ":model",
         "@com_google_protobuf//:empty_proto",
         "@com_google_protobuf//:timestamp_proto",
-    ]
+    ],
 )

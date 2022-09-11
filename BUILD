@@ -11,3 +11,24 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+load("@bazel_gazelle//:def.bzl", "gazelle")
+load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
+
+buildifier(
+    name = "buildifier",
+)
+
+gazelle(
+    name = "gazelle",
+    prefix = "example",
+)
+
+gazelle(
+    name = "gazelle-update-repos",
+    args = [
+        "-from_file=golang/go.mod",
+        "-to_macro=conf/go_deps.bzl%go_dependencies",
+        "-prune",
+    ],
+    command = "update-repos",
+)

@@ -13,6 +13,8 @@
 # limitations under the License.
 workspace(name = "vscode_bazel_tutorial")
 
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
 # Load the Google API definitions for use with Protobufs
 load("//:conf/repository_rules.bzl", "switched_rules_by_language")
 
@@ -29,63 +31,6 @@ switched_rules_by_language(
     python = False,
     ruby = False,
 )
-
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
-load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-
-###############################################################################
-# Protobuf Tool Chain
-###############################################################################
-git_repository(
-    name = "com_google_protobuf",
-    commit = "bc799d78f81115940eec953e2937245c70e3e6e4",
-    remote = "https://github.com/protocolbuffers/protobuf",
-    shallow_since = "1648147893 -0700",
-)
-
-http_archive(
-    name = "rules_proto",
-    sha256 = "e017528fd1c91c5a33f15493e3a398181a9e821a804eb7ff5acdd1d2d6c2b18d",
-    strip_prefix = "rules_proto-4.0.0-3.20.0",
-    urls = [
-        "https://github.com/bazelbuild/rules_proto/archive/refs/tags/4.0.0-3.20.0.tar.gz",
-    ],
-)
-
-http_archive(
-    name = "rules_proto_grpc",
-    sha256 = "507e38c8d95c7efa4f3b1c0595a8e8f139c885cb41a76cab7e20e4e67ae87731",
-    strip_prefix = "rules_proto_grpc-4.1.1",
-    urls = ["https://github.com/rules-proto-grpc/rules_proto_grpc/archive/4.1.1.tar.gz"],
-)
-
-load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
-
-protobuf_deps()
-
-load(
-    "@rules_proto_grpc//:repositories.bzl",
-    "rules_proto_grpc_repos",
-    "rules_proto_grpc_toolchains",
-)
-
-rules_proto_grpc_toolchains()
-
-rules_proto_grpc_repos()
-
-load(
-    "@rules_proto//proto:repositories.bzl",
-    "rules_proto_dependencies",
-    "rules_proto_toolchains",
-)
-
-rules_proto_dependencies()
-
-rules_proto_toolchains()
-
-load("@rules_proto_grpc//doc:repositories.bzl", rules_proto_grpc_doc_repos = "doc_repos")
-
-rules_proto_grpc_doc_repos()
 
 ###############################################################################
 # GO Tool Chain
@@ -109,6 +54,52 @@ http_archive(
     ],
 )
 
+load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
+load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
+
+go_rules_dependencies()
+
+go_register_toolchains(version = "1.17.13")
+
+gazelle_dependencies()
+
+###############################################################################
+# Protobuf Tool Chain
+###############################################################################
+
+http_archive(
+    name = "com_google_protobuf",
+    sha256 = "7ba0cb2ecfd9e5d44a6fa9ce05f254b7e5cd70ec89fafba0b07448f3e258310c",
+    strip_prefix = "protobuf-21.5",
+    urls = [
+        "https://github.com/protocolbuffers/protobuf/releases/download/v21.5/protobuf-all-21.5.tar.gz",
+    ],
+)
+
+http_archive(
+    name = "rules_proto",
+    sha256 = "e017528fd1c91c5a33f15493e3a398181a9e821a804eb7ff5acdd1d2d6c2b18d",
+    strip_prefix = "rules_proto-4.0.0-3.20.0",
+    urls = [
+        "https://github.com/bazelbuild/rules_proto/archive/refs/tags/4.0.0-3.20.0.tar.gz",
+    ],
+)
+
+http_archive(
+    name = "rules_proto_grpc",
+    sha256 = "bbe4db93499f5c9414926e46f9e35016999a4e9f6e3522482d3760dc61011070",
+    strip_prefix = "rules_proto_grpc-4.2.0",
+    urls = ["https://github.com/rules-proto-grpc/rules_proto_grpc/archive/4.2.0.tar.gz"],
+)
+
+load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
+load("//:conf/go_deps.bzl", "go_dependencies")
+
+# gazelle:repository_macro conf/go_deps.bzl%go_dependencies
+go_dependencies()
+
+protobuf_deps()
+
 http_archive(
     name = "com_github_bazelbuild_buildtools",
     sha256 = "e3bb0dc8b0274ea1aca75f1f8c0c835adbe589708ea89bf698069d0790701ea3",
@@ -118,27 +109,25 @@ http_archive(
     ],
 )
 
-load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
-load(
-    "@io_bazel_rules_go//go:deps.bzl",
-    "go_register_toolchains",
-    "go_rules_dependencies",
-)
+load("@rules_proto_grpc//:repositories.bzl", "rules_proto_grpc_repos", "rules_proto_grpc_toolchains")
 
-# Local Tool Chain
-load("//:conf/go_deps.bzl", "go_dependencies")
+rules_proto_grpc_toolchains()
 
-go_rules_dependencies()
+rules_proto_grpc_repos()
 
-go_register_toolchains(version = "1.19.1")
+load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
 
-go_dependencies()
+rules_proto_dependencies()
 
-gazelle_dependencies()
+rules_proto_toolchains()
 
 load("@rules_proto_grpc//go:repositories.bzl", rules_proto_grpc_go_repos = "go_repos")
 
 rules_proto_grpc_go_repos()
+
+load("@rules_proto_grpc//doc:repositories.bzl", rules_proto_grpc_doc_repos = "doc_repos")
+
+rules_proto_grpc_doc_repos()
 
 ###############################################################################
 # Java Tool Chain

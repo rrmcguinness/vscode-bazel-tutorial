@@ -53,7 +53,7 @@
     },
     "go.gopath": "/opt/projects/build/external/go_sdk",
     "go.toolsEnvVars": {
-      "GOPACKAGESDRIVER": "tools/gopackagesdriver.sh"
+      "GOPACKAGESDRIVER": "${workspaceFolder}/tools/gopackagesdriver.sh"
     },
     "go.enableCodeLens": {
       "references": false,
@@ -83,7 +83,7 @@
       "editor.tabSize": 2,
       "editor.rulers": [100],
       "editor.wordWrapColumn": 100,
-      "editor.formatOnSave": true,
+      "editor.formatOnSave": false,
       "editor.defaultFormatter": "trunk.io"
     },
     "[markdown]": {

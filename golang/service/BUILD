@@ -12,9 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-try-import $HOME/user.bazelrc
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
 
-startup --host_jvm_args=-XX:-UseParallelGC --output_base=../build
-
-build --color=yes --symlink_prefix=/ --java_language_version=17
-test --color=yes --java_language_version=17 --symlink_prefix=/ --test_output=all
+go_library(
+  name = "service_impl_lib",
+  srcs = ["common.go", "customers.go", "items.go", "stores.go", "transactions.go"],
+  embed = ["//golang:go_service_lib"],
+  deps = [
+    "//golang:go_model_lib"
+  ]
+)
