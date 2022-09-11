@@ -1,4 +1,4 @@
-module example/service
+module example
 
 go 1.19
 

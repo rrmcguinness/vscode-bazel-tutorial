@@ -17,13 +17,32 @@ load("@rules_proto_grpc//doc:defs.bzl", "doc_markdown_compile")
 
 package(default_visibility = ["//:__subpackages__"])
 
+# Build model docs
 doc_markdown_compile(
-    name = "document_protos",
+    name = "model-docs",
+    output_mode = "NO_PREFIX",
+    prefix_path = "docs",
+    protos = ["//api:model"],
+)
+
+# Build Service Docs
+doc_markdown_compile(
+    name = "service-docs",
     output_mode = "NO_PREFIX",
     prefix_path = "docs",
     protos = ["//api:service"],
 )
 
+# Build all Docs
+filegroup(
+    name = "docs",
+    srcs = [
+        ":model-docs",
+        ":service-docs",
+    ]
+)
+
+# Build model protos
 proto_library(
     name = "model",
     srcs = [
@@ -35,6 +54,7 @@ proto_library(
     ],
 )
 
+# Build Service Protos
 proto_library(
     name = "service",
     srcs = [
@@ -46,4 +66,13 @@ proto_library(
         "@com_google_protobuf//:empty_proto",
         "@com_google_protobuf//:timestamp_proto",
     ],
+)
+
+# Build all protos
+filegroup(
+    name = "api",
+    srcs = [
+        ":model",
+        ":service",
+    ]
 )

@@ -13,12 +13,40 @@
 # limitations under the License.
 
 load("@io_bazel_rules_go//go:def.bzl", "go_library")
+load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
 
-go_library(
-  name = "service_impl_lib",
-  srcs = ["common.go", "customers.go", "items.go", "stores.go", "transactions.go"],
-  embed = ["//golang:go_service_lib"],
+# Create the go proto library for the services
+# with a dependency on the model.
+go_proto_library(
+  name = "service_proto_lib",
+  visibility = ["//golang:__subpackages__"],
+  compilers = ["@io_bazel_rules_go//proto:go_grpc"],
+  importpath = "example/service",
+  proto = "//api:service",
   deps = [
-    "//golang:go_model_lib"
+    "//golang/model:model_proto_lib"
+  ]
+)
+
+## Usable libraries
+
+# Wrap the service libaraies into a go library and expose thier import path.
+# by doing so, this will give our Go code direct access by simply extending the
+# 'service' package.
+go_library(
+  name = "service",
+  srcs = [
+    "common.go",
+    "customers.go",
+    "items.go",
+    "stores.go",
+    "transactions.go"
+  ],
+  embed = [":service_proto_lib"],
+  importpath = "example/service",
+  visibility = ["//visibility:public"],
+  deps = [
+    "@com_github_google_uuid//:uuid",
+    "//golang/model",
   ]
 )

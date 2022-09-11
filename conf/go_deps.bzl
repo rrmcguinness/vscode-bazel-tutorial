@@ -1,12 +1,13 @@
-'''
+"""
     Auto Generated
-'''
+"""
+
 load("@bazel_gazelle//:deps.bzl", "go_repository")
 
 def go_dependencies():
-    '''
+    """
         Fetchs all third party dependencies from the go.mod file from gazelle
-    '''
+    """
     go_repository(
         name = "com_github_census_instrumentation_opencensus_proto",
         importpath = "github.com/census-instrumentation/opencensus-proto",

@@ -12,11 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-filegroup (
-  name = "golang",
+load("@io_bazel_rules_go//go:def.bzl", "go_binary")
+
+go_binary(
+  name = "server",
   srcs = [
+    "main.go"
+  ],
+  deps = [
     "//golang/model",
     "//golang/service",
-    "//golang/client:client_lib",
+    "@org_golang_google_grpc//:grpc",
   ]
 )
