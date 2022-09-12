@@ -1,5 +1,5 @@
 ---
-baseURL: http://localhost
+baseURL: https://rrmcguinness.github.io/vscode-bazel-tutorial
 title: Visual Studio Code + Bazel
 theme: hugo-geekdoc
 

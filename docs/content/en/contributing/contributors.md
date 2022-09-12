@@ -27,6 +27,6 @@ contributions to this project and their work is sincerly appreciated.
 
 <!-- Please keep list in Alphabeic order, Name or nickname as a link to your profile, Start Date (MM/dd/YYYY) -->
 
-| Name | Start Date | Bio |
-| ---- | ---------- | --- |
-|      |            |     |
+| Name            | Start Date | Bio                                        |
+| --------------- | ---------- | ------------------------------------------ |
+| Ryan McGuinness | 09 Sept 22 | [Git Hub](https://github.com/rrmcguinness) |
