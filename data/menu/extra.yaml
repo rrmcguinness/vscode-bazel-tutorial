@@ -1,6 +1,0 @@
----
-header:
-  - name: GitHub
-    ref: https://github.com/rrmcguinness/vscode-bazel-tutorial
-    icon: github
-    external: true
