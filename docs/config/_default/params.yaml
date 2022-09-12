@@ -15,8 +15,10 @@ geekdocEditPath: edit/main/docs
 geekdocSearch: true
 geekdocSearchShowParent: true
 
-geekdocLegalNotice:
-geekdocPrivacyPolicy:
+geekdocLegalNotice: legal-notice
+geekdocPrivacyPolicy: legal-notice
 
 geekdocImageLazyLoading: true
 geekdocDarkModeDim: true
+
+geekdocMenuBundle: false

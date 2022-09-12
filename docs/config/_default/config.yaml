@@ -42,3 +42,6 @@ security:
   exec:
     allow:
       - "^asciidoctor$"
+
+minify:
+  - disableHTML: true

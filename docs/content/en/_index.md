@@ -2,18 +2,16 @@
 title: "Visual Studio Code - Bazel Workspace"
 
 resources:
-  - name: arch
+  - name: banner
     src: arch-view.png
-    title: "Architecture Overivew"
-    params:
-      credits: "[Ryan McGuinness](https://www.github.com/rrmcguinness)"
+    title: "Architecture View"
 ---
 
 ## TL;DR;
 
 This repository contains an example project that uses Protocol Buffers (protobuf) to create a domain model and services. There are two example implementations, one in Go, the other in Java. The functionality is stubbed out, but shows how to build a multiple language project using Bazel. Lastly, it ties it all together with a predefined workspace and task to make it repeatable.
 
-{{< img name="arch" size="large" lazy=false >}}
+{{< img name="banner" size="origin" lazy=false >}}
 
 ### What this IS NOT
 

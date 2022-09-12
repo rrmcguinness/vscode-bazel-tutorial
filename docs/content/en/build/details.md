@@ -30,24 +30,6 @@ icon: "pen-solid"
    - This is how the Java and Go environments are setup, so it's pretty important.
    - Again, with the workspace limitations, Java Projects MAY NOT have multiple Java dependencies, this ONLY impacts the IDEs ability to do auto complete, but DOES NOT represent the compile or runtime dependencies. This MAY cause problems.
 
-## Understanding the Layout
-
-- api - This is where the protocol buffer files are located.
-- conf - These are configuration files used by Bazel.
-- docs - a Hugo website (WIP).
-- golang - The Go Project implementing the generated APIs.
-- java - The Java Project implementing the generated APIS.
-- third_party - A best practice directory for storing third_party assets.
-- tools - Helper scripts for VSCode to utilize Go with Bazel.
-
-### Important Files
-
-- vscode-bazel-tutorial.code-workspace - responsible for configuring vscode.
-- WORKSPACE - responsible for dependency management in Bazel.
-- api/BUILD - the build file for the API model and GRPC.
-- golang/BUILD - the Go build file with dependencies on the API.
-- java/BUILD - the Java build file with dependencies on the API.
-
 ## Build Details
 
 Just so you know what's happening behind the scenes when we execute `bazel build //...`. From above, we have a rough understanding, this section will provide a little more detail, starting from the WORKSPACE.

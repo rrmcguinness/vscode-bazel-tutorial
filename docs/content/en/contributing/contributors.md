@@ -1,7 +1,6 @@
 ---
 title: "Contributors"
-weight: 2
-icon: "pen-solid"
+weight: 1
 ---
 
 <!---

@@ -126,23 +126,7 @@
     "version": "2.0.0",
     "tasks": [
       {
-        "label": "os_type",
-        "detail": "Prints the operating system type to output for use with Bazel directories: darwin, linux, or windows",
-        "type": "shell",
-        "osx": {
-          "command": "echo 'macos'"
-        },
-        "linux": {
-          "command": "echo 'linux'"
-        },
-        "windows": {
-          "command": "echo 'windows'"
-        },
-        "group": "none",
-
-      },
-      {
-        "label": "Bazel Build",
+        "label": "Build All",
         "type": "shell",
         "command": "bazel build //...",
         "group": {
@@ -151,7 +135,79 @@
         }
       },
       {
-          "label": "Bazel Test",
+        "label": "Build API",
+        "type": "shell",
+        "command": "bazel build //api",
+        "group": {
+            "kind": "build",
+        }
+      },
+      {
+        "label": "Build Docs",
+        "type": "shell",
+        "command": "bazel build //docs",
+        "group": {
+            "kind": "build",
+        }
+      },
+      {
+        "label": "Run Document Site Locally",
+        "type": "shell",
+        "command": "bazel run //docs:serve.",
+        "group": {
+            "kind": "none",
+        }
+      },
+      {
+        "label": "Build Go Projects",
+        "type": "shell",
+        "command": "bazel build //golang/example/...",
+        "group": {
+            "kind": "build",
+        }
+      },
+      {
+        "label": "Run Go Protobuf Server",
+        "type": "shell",
+        "command": "bazel run //golang/example/server",
+        "group": {
+            "kind": "none",
+        }
+      },
+      {
+        "label": "Run Go Protobuf Client",
+        "type": "shell",
+        "command": "bazel run //golang/example/client",
+        "group": {
+            "kind": "none",
+        }
+      },
+      {
+        "label": "Build Java Projects",
+        "type": "shell",
+        "command": "bazel build //java/...",
+        "group": {
+            "kind": "build",
+        }
+      },
+      {
+        "label": "Run Java Protobuf Server",
+        "type": "shell",
+        "command": "bazel run //java/example/server",
+        "group": {
+            "kind": "none",
+        }
+      },
+      {
+        "label": "Run Java Protobuf Client",
+        "type": "shell",
+        "command": "bazel run //java/example/client",
+        "group": {
+            "kind": "none",
+        }
+      },
+      {
+          "label": "Test All",
           "type": "shell",
           "command": "bazel test //...",
           "group": {

@@ -37,7 +37,6 @@ hugo_site(
     static = glob(["static/**"]),
     assets = glob(["assets/**"]),
     layouts = glob(["layouts/**"]),
-    images = glob(["images/**"]),
     data = glob(["data/**"]),
     quiet = False,
     theme = ":hugo_theme_geekdoc",

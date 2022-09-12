@@ -1,7 +1,11 @@
 ---
 title: "Contributing"
 weight: 1
-icon: "pen-solid"
+
+resources:
+  - name: sdlc
+    src: git-process.png
+    title: "SDLC"
 ---
 
 <!---
@@ -20,25 +24,29 @@ icon: "pen-solid"
  limitations under the License.
 --->
 
-## Introduction
+## Understanding the Layout
 
-{{< mermaid class="text-center">}}
-flowchart LR
+- api - This is where the protocol buffer files are located.
+- conf - These are configuration files used by Bazel.
+- docs - a Hugo website (WIP).
+- golang - The Go Project implementing the generated APIs.
+- java - The Java Project implementing the generated APIS.
+- third_party - A best practice directory for storing third_party assets.
+- tools - Helper scripts for VSCode to utilize Go with Bazel.
 
-A(Create GitHub Account) -->|Request access| B(Fork Repository)
-B -->|Open Clone| C(Checkout Source Code)
-C --> D(Make Changes)
-D --> E(Write Tests)
-E --> F(Test)
-F --> G(Verify)
-G --> H(Commit)
-H --> I(Create PR)
-I --> J[Collaborate]
-J --> K{Pass}
-K --> L[Merge]
-K -->|Fix Suggestions| C
-L --> C
-{{< /mermaid >}}
+### Important Files
+
+- vscode-bazel-tutorial.code-workspace - responsible for configuring vscode.
+- WORKSPACE - responsible for dependency management in Bazel.
+- api/BUILD - the build file for the API model and GRPC.
+- golang/BUILD - the Go build file with dependencies on the API.
+- java/BUILD - the Java build file with dependencies on the API.
+
+## SDLC
+
+<div style="background-color: #FFFFF">
+{{< img name="sdlc" size="large" lazy=false >}}
+</div>
 
 ### Steps
 

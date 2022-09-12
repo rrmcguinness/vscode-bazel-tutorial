@@ -31,6 +31,7 @@ This repository IS NOT a general purpose tutorial for how to use Bazel, Visual S
 ## Known Issues
 
 - :bangbang: Many of the language tools require fixed, non-relative, non-expanding paths to toolsets. This is painful when your build tool can construct the tool-chain.
+    - [Java Extension Open Bug](https://github.com/redhat-developer/vscode-java/issues/1357)
 - :heavy_exclamation_mark: Gopls Server and Protobufs not honoring the $GOBIN variable, nor have I found a setting to add it to the server.
 
 ## Setup
