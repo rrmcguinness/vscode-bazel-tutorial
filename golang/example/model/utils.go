@@ -14,7 +14,6 @@ package model
 // limitations under the License.
 
 import (
-  "fmt"
   "github.com/google/uuid"
 )
 
@@ -32,8 +31,4 @@ func NewStore(name string, zipcode string) *Store {
 
 func (store *Store) addMeta(key string, value string) {
   store.Meta[key] = value
-}
-
-func SayHello() {
-  fmt.Println("Hello")
 }
