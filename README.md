@@ -20,6 +20,7 @@ This repository IS NOT a general purpose tutorial for how to use Bazel, Visual S
 
 ## Verified
 
+- :white_check_mark: Linux (Ubuntu / Linux Mint)
 - :white_check_mark: Mac OS X
 - :white_check_mark: Windows 10 with Windows Subsystem for Linux (WSL)
 - :white_check_mark: Chrome OS (Version 105+) with Developer Linux Tools
