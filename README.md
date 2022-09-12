@@ -14,6 +14,12 @@ This repository IS NOT a general purpose tutorial for how to use Bazel, Visual S
 - Bazel - [Install Instructions](https://bazel.build/start)
 - Knowledge of your Terminal / Command Prompt
 
+## Verified
+
+> Mac OS X [x]
+> Windows 10 with Windows Subsystem for Linux (WSL) [x]
+> Chrome OS (Version 105+) with Developer Linux Tools [x]
+
 > Once Bazel is installed, make sure you can execute `bazel help` from the terminal.
 
 ## Setup
