@@ -36,6 +36,9 @@
       "../build/execroot/vscode_bazel_tutorial/bazel-out/*-fastbuild/bin/java/**/*.jar"
     ],
     "go.useLanguageServer": true,
+    "go.alternateTools": {
+      "go": "/opt/projects/build/external/go_sdk/bin/go"
+    },
     "gopls": {
       "formatting.gofumpt": true,
       "formatting.local": "github.com/bazelbuild/rules_go",
@@ -49,11 +52,16 @@
         "tidy": false,
         "upgrade_dependency": false,
         "vendor": false
-      }
+      },
+      "build.directoryFilters":[
+        "-",
+        "+golang",
+        "+bazel-out/darwin-fastbuild/bin/golang/model/model_proto_lib/example/model",
+        "+bazel-out/darwin-fastbuild/bin/golang/service/service_proto_lib/example/service",
+      ]
     },
-    "go.gopath": "/opt/projects/build/external/go_sdk",
     "go.toolsEnvVars": {
-      "GOPACKAGESDRIVER": "${workspaceFolder}/tools/gopackagesdriver.sh"
+      "GOPACKAGESDRIVER": "/opt/projects/vscode_bazel_tutorial/tools/gopackagesdriver.sh"
     },
     "go.enableCodeLens": {
       "references": false,
