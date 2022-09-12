@@ -16,9 +16,10 @@ This repository IS NOT a general purpose tutorial for how to use Bazel, Visual S
 
 ## Verified
 
-> Mac OS X [x]
-> Windows 10 with Windows Subsystem for Linux (WSL) [x]
-> Chrome OS (Version 105+) with Developer Linux Tools [x]
+> :white_check_mark: Mac OS X
+> :white_check_mark: Windows 10 with Windows Subsystem for Linux (WSL)
+> :white_check_mark: Chrome OS (Version 105+) with Developer Linux Tools
+> :x: Windows 10 Native - Not working due to path requirements.
 
 > Once Bazel is installed, make sure you can execute `bazel help` from the terminal.
 
