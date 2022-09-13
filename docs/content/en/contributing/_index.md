@@ -44,9 +44,7 @@ resources:
 
 ## SDLC
 
-<div style="background-color: #FFFFF">
 {{< img name="sdlc" size="large" lazy=false >}}
-</div>
 
 ### Steps
 
