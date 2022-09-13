@@ -6,12 +6,18 @@
   </url><url>
     <loc>https://rrmcguinness.github.io/vscode-bazel-tutorial/contributing/contributors/</loc>
   </url><url>
+    <loc>https://rrmcguinness.github.io/vscode-bazel-tutorial/legal-notice/</loc>
+  </url><url>
     <loc>https://rrmcguinness.github.io/vscode-bazel-tutorial/build/details/</loc>
+  </url><url>
+    <loc>https://rrmcguinness.github.io/vscode-bazel-tutorial/setup/</loc>
   </url><url>
     <loc>https://rrmcguinness.github.io/vscode-bazel-tutorial/build/</loc>
   </url><url>
     <loc>https://rrmcguinness.github.io/vscode-bazel-tutorial/tags/</loc>
   </url><url>
     <loc>https://rrmcguinness.github.io/vscode-bazel-tutorial/</loc>
+  </url><url>
+    <loc>https://rrmcguinness.github.io/vscode-bazel-tutorial/setup/wsl/</loc>
   </url>
 </urlset>
