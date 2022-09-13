@@ -12,10 +12,12 @@
 <meta name="generator" content="Hugo 0.101.0" />
 
 
-  <meta name="description" content="Page Banner Introduction If you&rsquo;re on a Windows workstation and want to use Bazel, the best option I&rsquo;ve found is using Windows Subsystem for Linux or WSL.
-The benefit of using WSL is the awesome native integration with Visual Studio Code. You can launch your project in WSL and simply use the VS Code you&rsquo;ve already installed. As a developer, I&rsquo;ve been using these features for years and sincerely appreciate Microsoft embracing WSL as an alternative development environment." />
+  <meta name="description" content="Introduction The domain model is the reprentation of nouns and verbs used by a system to describe a particular business domain. In this scenario we will describe a very simple retail solution.
+Model Is the representation of the Nouns in the System.
+Transfer Objects Are state objects used in conjunction with model objects to invoke services.
+Services Are the verbs, or actions, a domain exposes." />
 
-    <title>Windows Subsystem for Linux | Visual Studio Code &#43; Bazel</title>
+    <title>Domain Model | Visual Studio Code &#43; Bazel</title>
 
     <link rel="icon" type="image/svg+xml" href="/vscode-bazel-tutorial/favicon/favicon.svg" />
 <link
@@ -36,41 +38,45 @@ The benefit of using WSL is the awesome native integration with Visual Studio Co
     
   <meta
     property="og:title"
-    content="Windows Subsystem for Linux"
+    content="Domain Model"
   />
   <meta property="og:site_name" content="Visual Studio Code + Bazel" />
   <meta property="og:image" content="https://rrmcguinness.github.io/vscode-bazel-tutorial/socialmedia2.png" />
-  <meta property="og:description" content="Page Banner Introduction If you’re on a Windows workstation and want to use Bazel, the best option I’ve found is using Windows Subsystem for Linux or WSL.
-The benefit of using WSL is the awesome native integration with Visual Studio Code. You can launch your project in WSL and simply use the VS Code you’ve already installed. As a developer, I’ve been using these features for years and sincerely appreciate Microsoft embracing WSL as an alternative development environment." />
+  <meta property="og:description" content="Introduction The domain model is the reprentation of nouns and verbs used by a system to describe a particular business domain. In this scenario we will describe a very simple retail solution.
+Model Is the representation of the Nouns in the System.
+Transfer Objects Are state objects used in conjunction with model objects to invoke services.
+Services Are the verbs, or actions, a domain exposes." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rrmcguinness.github.io/vscode-bazel-tutorial/setup/wsl/" />
+<meta property="og:url" content="https://rrmcguinness.github.io/vscode-bazel-tutorial/domain/" />
 
-<meta property="article:section" content="Setup" />
+<meta property="article:section" content="Domain" />
 
 
   <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Windows Subsystem for Linux" />
+<meta name="twitter:title" content="Domain Model" />
   <meta property="twitter:image" content="https://rrmcguinness.github.io/vscode-bazel-tutorial/socialmedia2.png" />
-  <meta name="twitter:description" content="Page Banner Introduction If you’re on a Windows workstation and want to use Bazel, the best option I’ve found is using Windows Subsystem for Linux or WSL.
-The benefit of using WSL is the awesome native integration with Visual Studio Code. You can launch your project in WSL and simply use the VS Code you’ve already installed. As a developer, I’ve been using these features for years and sincerely appreciate Microsoft embracing WSL as an alternative development environment." />
+  <meta name="twitter:description" content="Introduction The domain model is the reprentation of nouns and verbs used by a system to describe a particular business domain. In this scenario we will describe a very simple retail solution.
+Model Is the representation of the Nouns in the System.
+Transfer Objects Are state objects used in conjunction with model objects to invoke services.
+Services Are the verbs, or actions, a domain exposes." />
 
 
   <script type="application/ld+json">
   {
       "@context": "http://schema.org",
       "@type": "TechArticle",
-      "articleSection": "Setup",
-      "name": "Windows Subsystem for Linux",
-      "url" : "https://rrmcguinness.github.io/vscode-bazel-tutorial/setup/wsl/",
-      "headline": "Windows Subsystem for Linux",
-      "description": "Page Banner Introduction If you’re on a Windows workstation and want to use Bazel, the best option I’ve found is using Windows Subsystem for Linux or WSL.\nThe benefit of using WSL is the awesome native integration with Visual Studio Code. You can launch your project in WSL and simply use the VS Code you’ve already installed. As a developer, I’ve been using these features for years and sincerely appreciate Microsoft embracing WSL as an alternative development environment.",
+      "articleSection": "Domain",
+      "name": "Domain Model",
+      "url" : "https://rrmcguinness.github.io/vscode-bazel-tutorial/domain/",
+      "headline": "Domain Model",
+      "description": "Introduction The domain model is the reprentation of nouns and verbs used by a system to describe a particular business domain. In this scenario we will describe a very simple retail solution.\nModel Is the representation of the Nouns in the System.\nTransfer Objects Are state objects used in conjunction with model objects to invoke services.\nServices Are the verbs, or actions, a domain exposes.",
       "thumbnailUrl": "https://rrmcguinness.github.io/vscode-bazel-tutorial/socialmedia2.png",
-      "wordCount" : "99",
+      "wordCount" : "65",
       "inLanguage": "en",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://rrmcguinness.github.io/vscode-bazel-tutorial/setup/wsl/"
+          "@id": "https://rrmcguinness.github.io/vscode-bazel-tutorial/domain/"
       },
       "copyrightHolder" : "Visual Studio Code \u002b Bazel",
       "copyrightYear" : "0001",
@@ -152,7 +158,7 @@ The benefit of using WSL is the awesome native integration with Visual Studio Co
   href="/vscode-bazel-tutorial/custom.css"
   media="all"
 />
-  <link href="https://rrmcguinness.github.io/vscode-bazel-tutorial/setup/wsl/" rel="canonical" type="text/html" />
+  <link href="https://rrmcguinness.github.io/vscode-bazel-tutorial/domain/" rel="canonical" type="text/html" />
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -512,7 +518,7 @@ The benefit of using WSL is the awesome native integration with Visual Studio Co
                 <span class="flex">
                   <a
                     href="/vscode-bazel-tutorial/setup/wsl/"
-                    class="gdoc-nav__entry is-active"
+                    class="gdoc-nav__entry"
                   >
                     Windows Subsystem for Linux
                   </a>
@@ -661,7 +667,7 @@ The benefit of using WSL is the awesome native integration with Visual Studio Co
                 <span class="flex">
                   <a
                     href="/vscode-bazel-tutorial/domain/"
-                    class="gdoc-nav__entry"
+                    class="gdoc-nav__entry is-active"
                   >
                     Domain Model
                   </a>
@@ -1013,15 +1019,7 @@ The benefit of using WSL is the awesome native integration with Visual Studio Co
     
   
   
-    
-    
-    
-    
-  
-  
-    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/vscode-bazel-tutorial/' href='/vscode-bazel-tutorial/'><span itemprop='name'>Visual Studio Code - Bazel Workspace</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/vscode-bazel-tutorial/setup/' href='/vscode-bazel-tutorial/setup/'><span itemprop='name'>Setting up the Workspace</span></a><meta itemprop='position' content='3' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Windows Subsystem for Linux</span><meta itemprop='position' content='4' /></li>
-  
-
+    <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/vscode-bazel-tutorial/' href='/vscode-bazel-tutorial/'><span itemprop='name'>Visual Studio Code - Bazel Workspace</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Domain Model</span><meta itemprop='position' content='3' /></li>
   
 
   
@@ -1034,7 +1032,7 @@ The benefit of using WSL is the awesome native integration with Visual Studio Co
       <span class="editpage">
         <svg class="gdoc-icon gdoc_code"><use xlink:href="#gdoc_code"></use></svg>
         <a
-          href="https://github.com/rrmcguinness/vscode-bazel-tutorial/edit/main/docs/content/en/setup/wsl/_index.md"
+          href="https://github.com/rrmcguinness/vscode-bazel-tutorial/edit/main/docs/content/en/domain/_index.md"
         >
           Edit page
         </a>
@@ -1048,7 +1046,7 @@ The benefit of using WSL is the awesome native integration with Visual Studio Co
   <article
     class="gdoc-markdown gdoc-markdown__align--left"
   >
-    <h1>Windows Subsystem for Linux</h1>
+    <h1>Domain Model</h1>
     <!--
  Copyright 2022 Ryan McGuinness
 
@@ -1064,64 +1062,42 @@ The benefit of using WSL is the awesome native integration with Visual Studio Co
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-
-
-
-  <div class="flex justify-center">
-    <figure
-      class="gdoc-post__figure"
-    >
-      <a class="gdoc-markdown__link--raw" href="https://rrmcguinness.github.io/vscode-bazel-tutorial/setup/wsl/wsl.png">
-        <picture>
-          <source
-              srcset=""
-          />
-          <img
-            src="https://rrmcguinness.github.io/vscode-bazel-tutorial/setup/wsl/wsl_hu6bac88768998e1ea95727c308a45777a_50444_1800x0_resize_box_3.png"
-            alt="Page Banner"
-          />
-        </picture>
-      </a>
-          <figcaption>
-            Page Banner
-          </figcaption>
-    </figure>
-  </div>
-
 <div class="gdoc-page__anchorwrap">
     <h2 id="introduction">
         Introduction
-        <a data-clipboard-text="https://rrmcguinness.github.io/vscode-bazel-tutorial/setup/wsl/#introduction" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Introduction" aria-label="Anchor to: Introduction" href="#introduction">
+        <a data-clipboard-text="https://rrmcguinness.github.io/vscode-bazel-tutorial/domain/#introduction" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Introduction" aria-label="Anchor to: Introduction" href="#introduction">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h2>
 </div>
-<p>If you&rsquo;re on a Windows workstation and want to use Bazel, the best option I&rsquo;ve found is using Windows Subsystem for Linux or WSL.</p>
-<p>The benefit of using WSL is the awesome native integration with Visual Studio Code. You can launch your project in WSL and simply use the VS Code you&rsquo;ve already installed. As a developer, I&rsquo;ve been using these features for years and sincerely appreciate Microsoft embracing WSL as an alternative development environment.</p>
+<p>The domain model is the reprentation of nouns and verbs used by a system to describe a particular business domain. In this scenario we will describe a very simple retail solution.</p>
 <div class="gdoc-page__anchorwrap">
-    <h3 id="installation">
-        Installation
-        <a data-clipboard-text="https://rrmcguinness.github.io/vscode-bazel-tutorial/setup/wsl/#installation" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Installation" aria-label="Anchor to: Installation" href="#installation">
+    <h3 id="model">
+        Model
+        <a data-clipboard-text="https://rrmcguinness.github.io/vscode-bazel-tutorial/domain/#model" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Model" aria-label="Anchor to: Model" href="#model">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h3>
 </div>
-<p>Follow the directions found <a
-  class="gdoc-markdown__link"
-  href="https://docs.microsoft.com/en-us/windows/wsl/install"
->here</a>.</p>
+<p>Is the representation of the Nouns in the System.</p>
 <div class="gdoc-page__anchorwrap">
-    <h3 id="using-vscode-with-wsl">
-        Using VSCode with WSL
-        <a data-clipboard-text="https://rrmcguinness.github.io/vscode-bazel-tutorial/setup/wsl/#using-vscode-with-wsl" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Using VSCode with WSL" aria-label="Anchor to: Using VSCode with WSL" href="#using-vscode-with-wsl">
+    <h3 id="transfer-objects">
+        Transfer Objects
+        <a data-clipboard-text="https://rrmcguinness.github.io/vscode-bazel-tutorial/domain/#transfer-objects" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Transfer Objects" aria-label="Anchor to: Transfer Objects" href="#transfer-objects">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h3>
 </div>
-<p>Learning how to use VSCode with WSL can be found <a
-  class="gdoc-markdown__link"
-  href="https://code.visualstudio.com/blogs/2019/09/03/wsl2"
->here</a></p>
+<p>Are state objects used in conjunction with model objects to invoke services.</p>
+<div class="gdoc-page__anchorwrap">
+    <h3 id="services">
+        Services
+        <a data-clipboard-text="https://rrmcguinness.github.io/vscode-bazel-tutorial/domain/#services" class="gdoc-page__anchor clip flex align-center" title="Anchor to: Services" aria-label="Anchor to: Services" href="#services">
+            <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+        </a>
+    </h3>
+</div>
+<p>Are the verbs, or actions, a domain exposes.</p>
 
   </article>
 
