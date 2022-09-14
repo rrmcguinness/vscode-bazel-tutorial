@@ -10,6 +10,11 @@ This repository contains an example project that uses Protocol Buffers (protobuf
 
 This repository IS NOT a general purpose tutorial for how to use Bazel, Visual Studio Code, Java, or Go. It is intended for those who want their IDE to work with a mono-repo / multi-project build system. That being said, I've attempted to add a README in each module to explain how it was built.
 
+## Documentation Site
+
+[Documentation](https://rrmcguinness.github.io/vscode-bazel-tutorial/)
+
+
 ## Prerequisites
 
 - Visual Studio Code (vscode) - [Download and Install](https://code.visualstudio.com/)
