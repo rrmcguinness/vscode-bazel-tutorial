@@ -1,5 +1,4 @@
 /* Global customization */
-
 :root {
     --code-max-height: 60rem;
 }
@@ -153,4 +152,8 @@
         --footer-link-color: #ffcc5c;
         --footer-link-color-visited: #ffcc5c;
     }
+}
+
+.light-image > * {
+    background-color: white !important;
 }
