@@ -4,7 +4,8 @@ title: "Windows Subsystem for Linux"
 resources:
   - name: banner
     src: wsl.png
-    title: "Page Banner"
+    title: ""
+    alt: "Page Banner"
 ---
 
 <!--

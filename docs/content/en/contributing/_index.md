@@ -44,7 +44,9 @@ resources:
 
 ## SDLC
 
-{{< img name="sdlc" size="large" lazy=false >}}
+<div class="light-image">
+{{< img name="sdlc" size="origin" lazy=false >}}
+</div>
 
 ### Steps
 

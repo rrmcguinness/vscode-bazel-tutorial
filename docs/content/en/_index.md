@@ -11,7 +11,9 @@ resources:
 
 This repository contains an example project that uses Protocol Buffers (protobuf) to create a domain model and services. There are two example implementations, one in Go, the other in Java. The functionality is stubbed out, but shows how to build a multiple language project using Bazel. Lastly, it ties it all together with a predefined workspace and task to make it repeatable.
 
+<div class="light-image">
 {{< img name="banner" size="origin" lazy=false >}}
+</div>
 
 ### What this IS NOT
 

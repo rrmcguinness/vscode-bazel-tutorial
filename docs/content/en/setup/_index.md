@@ -24,7 +24,6 @@ weight: 2
 In your home directory, create a folder called "projects". This only matters due to some limitations in the workspace configuration file. Vscode extensions for Java and Go WILL NOT support variable expressions for paths.
 
 {{< hint type=note icon=gdoc_github title=Limitations >}}
-
 This project is currently setup in "/opt/projects". Why /opt? Because writing a turorial
 to create a '/data/projects' directory on MacOS seems to be a hit-and-miss since / is a read-only
 mount, and /etc/synthetic.conf has other issues.

@@ -31,7 +31,7 @@ copy_file_groups(
 )
 
 hugo_site(
-    name = "docs",
+    name = "hugo_site",
     config_dir = glob(["config/**"]),
     content = glob(["content/**"]) + [":copy_icons"],
     static = glob(["static/**"]),
@@ -41,6 +41,14 @@ hugo_site(
     quiet = False,
     theme = ":hugo_theme_geekdoc",
     verbose = True,
+)
+
+filegroup (
+    name = "docs",
+    srcs = [
+        ":copy_icons",
+        ":hugo_site",
+    ]
 )
 
 # Run local development server
