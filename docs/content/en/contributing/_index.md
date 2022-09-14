@@ -5,7 +5,8 @@ weight: 1
 resources:
   - name: sdlc
     src: git-process.png
-    title: "SDLC"
+    title: ""
+    alt: "Github Fort Process"
 ---
 
 <!---

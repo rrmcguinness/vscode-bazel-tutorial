@@ -5,7 +5,7 @@ resources:
   - name: banner
     src: wsl.png
     title: ""
-    alt: "Page Banner"
+    alt: "Page Banner Windows + WSL + Ubuntu"
 ---
 
 <!--

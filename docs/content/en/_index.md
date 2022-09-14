@@ -4,7 +4,8 @@ title: "Visual Studio Code - Bazel Workspace"
 resources:
   - name: banner
     src: arch-view.png
-    title: "Architecture View"
+    title: ""
+    alt: "Architecture View"
 ---
 
 ## TL;DR;

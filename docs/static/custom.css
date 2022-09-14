@@ -155,5 +155,6 @@
 }
 
 .light-image > * {
-    background-color: white !important;
+    background-color: rgb(205, 205, 205) !important;
+    border:2px solid #262b2f
 }
